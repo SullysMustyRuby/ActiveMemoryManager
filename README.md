@@ -18,7 +18,7 @@ iex --sname mnesia_manager@localhost -S mix
 ```
 
 ### First time starting this app
-Once the service is runnint in iex terminal run following command:
+Once the service is running in iex terminal run following command:
 ```elixir
 iex> MnesiaManager.create_schema()
 ```
