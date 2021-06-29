@@ -30,3 +30,6 @@ mnesia_manager-*.tar
 
 # Ignore the mnesia dir
 .mnesia/
+
+# Ignore config.secrets
+.env*
