@@ -1,22 +1,22 @@
 # MnesiaManager
-
-**TODO: Add description**
+Designed to backup [HubsynchTwo](https://github.com/ErinHivelociy/hubsynch_two) :mnesia databases. 
+Allows for  HubsynchTwo service stops and starts and will persist data.
+This service also saves in disk copies, thus this service can also stop and start and data will persist.
 
 ## Installation
+This is a very small and basic service thus:
+`mix deps.get` 
+Is all you need.
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `mnesia_manager` to your list of dependencies in `mix.exs`:
+## Use
+Before running [HubsynchTwo](https://github.com/ErinHivelociy/hubsynch_two) and [HubVault](https://github.com/ErinHivelociy/hub-vault)
+Start this service with:
+`iex --sname mnesia_manager@localhost -S mix`
 
+### First time starting this app
+Once the service is runnint in iex terminal run following command:
 ```elixir
-def deps do
-  [
-    {:mnesia_manager, "~> 0.1.0"}
-  ]
-end
+MnesiaManager.create_schema()
 ```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/mnesia_manager](https://hexdocs.pm/mnesia_manager).
-
-iex --sname mnesia_manager@localhost -S mix
+Start the [HubsynchTwo](https://github.com/ErinHivelociy/hubsynch_two) and [HubVault](https://github.com/ErinHivelociy/hub-vault)
+following the README instructions at those repositories 

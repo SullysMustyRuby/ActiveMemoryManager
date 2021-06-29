@@ -22,6 +22,11 @@ erl_crash.dump
 # Ignore package tarball (built via "mix hex.build").
 mnesia_manager-*.tar
 
+# Ignore mac os DS_Store
+*.DS_Store
 
 # Temporary files for e.g. tests
 /tmp
+
+# Ignore the mnesia dir
+.mnesia/
