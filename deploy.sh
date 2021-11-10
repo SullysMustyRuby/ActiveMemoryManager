@@ -24,7 +24,7 @@ check_heartbeats() {
 
 ore_release() {
   cp -Rf $mnesia_manager_backup_path $mnesia_manager_build_path
-  sudo systemctl restart hub_vault.service
+  sudo systemctl restart mnesia_manager.service
 }
 
 # Go into hubsynch_to dir
@@ -49,7 +49,7 @@ mix release --overwrite --quiet
 
 # Restart service with new release
 echo "starting new release"
-sudo systemctl restart hub_vault.service
+sudo systemctl restart mnesia_manager.service
 
 sleep 10s
 
