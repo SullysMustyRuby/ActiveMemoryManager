@@ -20,6 +20,10 @@ defmodule MnesiaManager do
     end
   end
 
+  def heartbeat do
+    IO.puts("ok")
+  end
+
   defp create_mnesia_dir do
     case File.exists?(mnesia_dir()) do
       true -> :ok
