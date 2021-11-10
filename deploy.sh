@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Path variables
+mnesia_manager_path="/home/ec2-user/mnesia-manager/"
 mnesia_manager_backup_path="/home/ec2-user/release-backups/mnesia-manager/"
 mnesia_manager_build_path="/home/ec2-user/mnesia-manager/_build/prod/rel/mnesia_manager/"
 mnesia_manager_env="/home/ec2-user/mnesia-manager/.env.prod"
@@ -12,7 +13,7 @@ backup_release() {
 }
 
 check_heartbeats() {
-  status=$($hub_vault_service_path rpc "Elixir.MnesiaManager.heartbeat")
+  status=$($mnesia_manager_service_path rpc "Elixir.MnesiaManager.heartbeat")
   if [[ $status != "ok" ]]; then
     return 1
   fi
@@ -27,7 +28,7 @@ ore_release() {
 }
 
 # Go into hubsynch_to dir
-cd $mnesia_manager_service_path
+cd $mnesia_manager_path
 
 # git dance
 git co main
