@@ -45,3 +45,23 @@ Application is currently running as a service with systemctl, the file is locate
 - Stop: sudo systemctl stop mnesia_manager.service
 - Start: sudo systemctl start mnesia_manager.service
 - Check logs: journalctl -u mnesia_manager.service | tail -50
+
+## Maintenence and Support tips
+
+### Removing stopped db nodes 
+
+1. Delete the tables belonging to the node. Must use the full table name.
+Example:
+```elixir
+:mnesia.delete_table(MetricsServer.Secrets)
+```
+If there is an error about majority or nodes down change the majority for that table. This allows changes like deletes to happen when nodes are down.
+Example:
+```elixir
+:mnesia.change_table_majority(MetricsServer.Secrets, false)
+```
+2. Delete the node schema. Must use quotes around the string when the node has an ip address in the name.
+Example:
+```elixir
+:mnesia.delete_schema(:"metrics_server@ip-10-11-198")
+```
