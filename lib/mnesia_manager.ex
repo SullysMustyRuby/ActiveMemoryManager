@@ -4,12 +4,12 @@ defmodule MnesiaManager do
   """
 
   @doc """
-  Hello world.
+  This should only need to run the first time the application is installed.
 
   ## Examples
 
-      iex> MnesiaManager.hello()
-      :world
+      iex> MnesiaManager.create_schema()
+      :ok
 
   """
   def create_schema do

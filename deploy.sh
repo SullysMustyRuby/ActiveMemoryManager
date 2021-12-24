@@ -31,7 +31,7 @@ ore_release() {
 cd $mnesia_manager_path
 
 # git dance
-git co main
+git checkout main
 git pull
 
 # Set env from .env file
