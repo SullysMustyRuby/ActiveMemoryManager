@@ -3,6 +3,11 @@ Designed to backup [HubsynchTwo](https://github.com/ErinHivelociy/hubsynch_two) 
 Allows for  HubsynchTwo service stops and starts and will persist data.
 This service also saves in disk copies, thus this service can also stop and start and data will persist.
 
+## Prerequisites
+* Elixir at least version 1.11.2 with Erlang/OTP 23 ([suggest ASDF](https://asdf-vm.com/))
+* Gcc ([Homebrew](https://formulae.brew.sh/formula/gcc#default))
+* Xcode (for mac) 
+
 ## Installation
 This is a very small and basic service thus:
 ```bash
