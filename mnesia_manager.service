@@ -1,0 +1,26 @@
+# This is the system service file and should be updated per server if needed
+# These files are generally deployed to /etc/systemd/system/
+# Please see README for more information.
+
+[Unit]
+Description=MnesiaManager service
+After=local-fs.target network.target
+
+[Service]
+Type=simple
+User=ec2-user
+Group=ec2-user
+WorkingDirectory=/home/ec2-user/mnesia-manager
+ExecStart=/home/ec2-user/mnesia-manager/_build/prod/rel/mnesia_manager/bin/mnesia_manager start
+ExecStop=/home/ec2-user/mnesia-manager/_build/prod/rel/mnesia_manager/bin/mnesia_manager stop
+EnvironmentFile=/home/ec2-user/mnesia-manager/.env.prod
+Environment=LANG=en_US.utf8
+Environment=MIX_ENV=prod
+
+LimitNOFILE=65535
+UMask=0027
+SyslogIdentifier=mnesia_manager
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
