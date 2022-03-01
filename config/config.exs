@@ -13,4 +13,4 @@ config :libcluster,
   ]
 
 config :mnesia,
-  dir: '.mnesia/#{node()}'
+  dir: '.mnesia/#{String.to_atom(System.get_env("MNESIA_MANAGER") || "mnesia_manager@localhost")}'
