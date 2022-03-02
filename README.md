@@ -40,7 +40,7 @@ Or something similiar that is a sign Mnesia needs to recreate the schema with al
 Once all the nodes are connected, you need to stop Mnesia on all the nodes, delete any old schemas with
 ```elixir
 :mnesia.stop
-:mnesia.delete_schema
+:mnesia.delete_schema([node() | Node.list])
 ```
 
 Then on the MnesiaManager node only create the schema:
