@@ -30,6 +30,26 @@ iex> MnesiaManager.create_schema()
 Start the [HubsynchTwo](https://github.com/ErinHivelociy/hubsynch_two) and [HubVault](https://github.com/ErinHivelociy/hub-vault)
 following the README instructions at those repositories 
 
+#### Potential failure notice
+If you recieve an 
+```elixir
+{:error, {:not_active, SomeModuleName, :mnesia_manager@localhost}}
+```
+Or something similiar that is a sign Mnesia needs to recreate the schema with all the nodes attached. Mnesia has a strange schema creation and requires all the nodes which require disk persistance to be attached (even though that actual disk persistance is on MnesiaManager).
+
+Once all the nodes are connected, you need to stop Mnesia on all the nodes, delete any old schemas with
+```elixir
+:mnesia.stop
+:mnesia.delete_schema
+```
+
+Then on the MnesiaManager node only create the schema:
+```elixir
+:mnesia.create_schema([node() | Node.list()])
+```
+
+Then restart :mnesia on all nodes.
+
 ## Production deployment
 Currently using Elixir 1.11.2 (compiled with Erlang/OTP 23)
 For production deployment run these commands in a Linux or Mac machine with Elixir and Erlang installed.

@@ -15,7 +15,7 @@ defmodule MnesiaManager do
   def create_schema do
     with :stopped <- :mnesia.stop(),
          :ok <- create_mnesia_dir(),
-         :ok <- :mnesia.create_schema([node()]) do
+         :ok <- :mnesia.create_schema([node() | Node.list()]) do
       :mnesia.start()
     end
   end
