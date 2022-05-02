@@ -1,5 +1,5 @@
 # MnesiaManager
-Designed to backup [CoreServer](https://github.com/SullysMustyRuby/CoreServer) :mnesia databases. 
+Designed to backup [CoreServer](https://github.com/SullysMustyRuby/CoreServer) mnesia databases. 
 Allows for CoreServer service stops and starts and will persist data.
 This service also saves in disk copies, thus this service can also stop and start and data will persist.
 
