@@ -1,6 +1,6 @@
 # MnesiaManager
-Designed to backup [HubsynchTwo](https://github.com/ErinHivelociy/hubsynch_two) :mnesia databases. 
-Allows for  HubsynchTwo service stops and starts and will persist data.
+Designed to backup [CoreServer](https://github.com/SullysMustyRuby/CoreServer) :mnesia databases. 
+Allows for CoreServer service stops and starts and will persist data.
 This service also saves in disk copies, thus this service can also stop and start and data will persist.
 
 ## Prerequisites
@@ -16,7 +16,7 @@ mix deps.get
 Is all you need.
 
 ## Use
-Before running [HubsynchTwo](https://github.com/ErinHivelociy/hubsynch_two) and [HubVault](https://github.com/ErinHivelociy/hub-vault)
+Before running [CoreServer](https://github.com/SullysMustyRuby/CoreServer) and [CoreVault](https://github.com/SullysMustyRuby/CoreVault)
 Start this service with:
 ```bash
 iex --sname mnesia_manager@localhost -S mix
@@ -27,7 +27,7 @@ Once the service is running in iex terminal run following command:
 ```elixir
 iex> MnesiaManager.create_schema()
 ```
-Start the [HubsynchTwo](https://github.com/ErinHivelociy/hubsynch_two) and [HubVault](https://github.com/ErinHivelociy/hub-vault)
+Start the [CoreServer](https://github.com/SullysMustyRuby/CoreServer) and [CoreVault](https://github.com/SullysMustyRuby/CoreVault)
 following the README instructions at those repositories 
 
 #### Potential failure notice
