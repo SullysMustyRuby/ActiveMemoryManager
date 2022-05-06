@@ -6,7 +6,7 @@ config :libcluster,
       strategy: Cluster.Strategy.LocalEpmd,
       config: [
         hosts: [
-          String.to_atom(System.get_env("HUBSYNCHTWO_NODE_NAME") || "hub_bridge@localhost")
+          String.to_atom(System.get_env("CORE_SERVER") || "core_server@localhost")
         ]
       ]
     ]
