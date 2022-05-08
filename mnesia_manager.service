@@ -8,12 +8,12 @@ After=local-fs.target network.target
 
 [Service]
 Type=simple
-User=ec2-user
-Group=ec2-user
-WorkingDirectory=/home/ec2-user/mnesia-manager
-ExecStart=/home/ec2-user/mnesia-manager/_build/prod/rel/mnesia_manager/bin/mnesia_manager start
-ExecStop=/home/ec2-user/mnesia-manager/_build/prod/rel/mnesia_manager/bin/mnesia_manager stop
-EnvironmentFile=/home/ec2-user/mnesia-manager/.env.prod
+User=sullymustycode
+Group=sullymustycode
+WorkingDirectory=/home/sullymustycode/mnesia-manager
+ExecStart=/home/sullymustycode/mnesia-manager/_build/prod/rel/mnesia_manager/bin/mnesia_manager start
+ExecStop=/home/sullymustycode/mnesia-manager/_build/prod/rel/mnesia_manager/bin/mnesia_manager stop
+EnvironmentFile=/home/sullymustycode/mnesia-manager/.env.prod
 Environment=LANG=en_US.utf8
 Environment=MIX_ENV=prod
 
