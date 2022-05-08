@@ -10,10 +10,10 @@ After=local-fs.target network.target
 Type=simple
 User=sullymustycode
 Group=sullymustycode
-WorkingDirectory=/home/sullymustycode/mnesia-manager
-ExecStart=/home/sullymustycode/mnesia-manager/_build/prod/rel/mnesia_manager/bin/mnesia_manager start
-ExecStop=/home/sullymustycode/mnesia-manager/_build/prod/rel/mnesia_manager/bin/mnesia_manager stop
-EnvironmentFile=/home/sullymustycode/mnesia-manager/.env.prod
+WorkingDirectory=/home/sullymustycode/mnesia_manager
+ExecStart=/home/sullymustycode/mnesia_manager/_build/prod/rel/mnesia_manager/bin/mnesia_manager start
+ExecStop=/home/sullymustycode/mnesia_manager/_build/prod/rel/mnesia_manager/bin/mnesia_manager stop
+EnvironmentFile=/home/sullymustycode/mnesia_manager/.env.prod
 Environment=LANG=en_US.utf8
 Environment=MIX_ENV=prod
 

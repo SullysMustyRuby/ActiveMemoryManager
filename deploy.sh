@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Path variables
-mnesia_manager_path="/home/sullymustycode/mnesia-manager/"
-mnesia_manager_backup_path="/home/sullymustycode/release-backups/mnesia-manager/"
-mnesia_manager_build_path="/home/sullymustycode/mnesia-manager/_build/prod/rel/mnesia_manager/"
-mnesia_manager_env="/home/sullymustycode/mnesia-manager/.env.prod"
-mnesia_manager_service_path="/home/sullymustycode/mnesia-manager/_build/prod/rel/mnesia_manager/bin/mnesia_manager"
+mnesia_manager_path="/home/sullymustycode/mnesia_manager/"
+mnesia_manager_backup_path="/home/sullymustycode/release-backups/mnesia_manager/"
+mnesia_manager_build_path="/home/sullymustycode/mnesia_manager/_build/prod/rel/mnesia_manager/"
+mnesia_manager_env="/home/sullymustycode/mnesia_manager/.env.prod"
+mnesia_manager_service_path="/home/sullymustycode/mnesia_manager/_build/prod/rel/mnesia_manager/bin/mnesia_manager"
 
 # Functions
 backup_release() {
