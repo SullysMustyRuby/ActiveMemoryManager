@@ -4,11 +4,6 @@ config :libcluster,
   topologies: [
     localhost: [
       strategy: Cluster.Strategy.LocalEpmd
-      # config: [
-      #   hosts: [
-      #     String.to_atom(System.get_env("CORE_SERVER") || "core_server@localhost")
-      #   ]
-      # ]
     ]
   ]
 
