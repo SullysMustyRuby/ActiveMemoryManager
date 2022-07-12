@@ -20,6 +20,15 @@ defmodule MnesiaManager do
     end
   end
 
+  def recreate_schema do
+    with :stopped <- :mnesia.stop(),
+         :ok <- :mnesia.delete_schema([node()]),
+         :ok <- create_mnesia_dir(),
+         :ok <- :mnesia.create_schema([node()]) do
+      :mnesia.start()
+    end
+  end
+
   def heartbeat do
     IO.puts("ok")
   end
