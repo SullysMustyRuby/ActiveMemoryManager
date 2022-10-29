@@ -3,9 +3,9 @@ import Config
 config :libcluster,
   topologies: [
     localhost: [
-      strategy: Cluster.Strategy.LocalEpmd
+      strategy: Cluster.Strategy.LocalEpmd,
+      config: [
+        hosts: [:demo1@localhost, :demo2@localhost, :demo3@localhost]
+      ]
     ]
   ]
-
-config :mnesia,
-  dir: '.mnesia/#{String.to_atom(System.get_env("MNESIA_MANAGER") || "mnesia_manager@localhost")}'
